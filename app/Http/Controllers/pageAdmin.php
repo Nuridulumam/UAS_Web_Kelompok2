@@ -12,11 +12,30 @@ class pageAdmin extends Controller
         return view('Admin.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function login()
+    {
+        return view('Admin.login');
+    }
+    public function kategoriberita()
+    {
+        return view('Admin.kat-content.k_berita');
+    }
+    public function kategorimagang()
+    {
+        return view('Admin.kat-content.k_magang');
+    }
+    public function kategoriprestasi()
+    {
+        return view('Admin.kat-content.k_prestasi');
+    }
+
+    // pengaturan admin
+    public function admin()
+    {
+        return view('Admin.pengaturan');
+    }
+
+
     public function create()
     {
         //

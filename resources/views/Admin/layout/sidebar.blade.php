@@ -56,9 +56,9 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Categories:</h6>
-                        <a class="collapse-item" href="">Kategori berita</a>
-                        <a class="collapse-item" href="">Kategori prestasi</a>
-                        <a class="collapse-item" href="">Kategori magang</a>
+                        <a class="collapse-item" href="{{ url('/admin/kategori-berita')}}">Kategori berita</a>
+                        <a class="collapse-item" href="{{ url('/admin/kategori-prestasi')}}">Kategori prestasi</a>
+                        <a class="collapse-item" href="{{ url('/admin/kategori-magang')}}">Kategori magang</a>
                     </div>
                 </div>
             </li>
@@ -74,7 +74,7 @@
 
             <!-- Nav Item - Pengaturan admin -->
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ url('/admin/pengaturan-admin')}}">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Pengaturan Admin</span></a>
             </li>

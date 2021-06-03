@@ -20,4 +20,15 @@ use App\Http\Controllers\pageAdmin;
 // });
 
 Route::get('/', [pageUser::class, 'home']);
+Route::get('/profil', [pageUser::class, 'profil']);
+Route::get('/magang', [pageUser::class, 'magang']);
+Route::get('/berita', [pageUser::class, 'berita']);
+// admin
 Route::get('/admin', [pageAdmin::class, 'home']);
+Route::get('/admin/login', [pageAdmin::class, 'login']);
+// kategori
+Route::get('/admin/kategori-berita', [pageAdmin::class, 'kategoriberita']);
+Route::get('/admin/kategori-magang', [pageAdmin::class, 'kategorimagang']);
+Route::get('/admin/kategori-prestasi', [pageAdmin::class, 'kategoriprestasi']);
+// pengaturan-admin
+Route::get('/admin/pengaturan-admin', [pageAdmin::class, 'admin']);

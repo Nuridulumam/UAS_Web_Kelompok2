@@ -12,10 +12,11 @@
     <title>SB Admin 2 - Dashboard</title>
 
     <!-- Custom fonts for this template-->
+    <link href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="{{asset('assets/admin/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets/calendar-widget/style.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/calendar-widget/theme.css')}}" />
 
     <!-- Custom styles for this template-->
     <link href="{{asset('assets/admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
@@ -93,8 +94,7 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                @include('Admin.layout.content')
-
+                @yield('content')
             </div>
             <!-- End of Main Content -->
 
@@ -141,6 +141,17 @@
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('assets/admin/vendor/jquery/jquery.min.js')}}"></script>
+    {{-- calendar --}}
+    <script src="{{asset('assets/calendar-widget/calendar.min.js')}}"></script>
+    <script type="text/javascript">
+    $(function(){
+        $('.calendar-container').calendar();
+    });
+    $('.calendar-container').calendar({
+        date: new Date() // today
+    });
+
+    </script>
     <script src="{{asset('assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Core plugin JavaScript-->
@@ -156,6 +167,14 @@
     <script src="{{asset('assets/admin/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('assets/admin/js/demo/chart-pie-demo.js')}}"></script>
 
+    {{-- optional --}}
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
+    });
+    </script>
 </body>
 
 </html>
