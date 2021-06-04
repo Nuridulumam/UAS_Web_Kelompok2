@@ -38,9 +38,11 @@
                 <div id="collapseContent" class="collapse" aria-labelledby="headContent" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Contents:</h6>
-                        <a class="collapse-item" href="">Berita</a>
-                        <a class="collapse-item" href="">Prestasi</a>
-                        <a class="collapse-item" href="">Magang</a>
+                        <a class="collapse-item" href="{{ url('/admin/konten-home')}}">Home</a>
+                        <a class="collapse-item" href="{{ url('/admin/konten-profile')}}">Profile</a>
+                        <a class="collapse-item" href="{{ url('/admin/konten-berita')}}">Berita</a>
+                        <a class="collapse-item" href="{{ url('/admin/konten-prestasi')}}">Prestasi</a>
+                        <a class="collapse-item" href="{{ url('/admin/konten-magang')}}">Magang</a>
                     </div>
                 </div>
             </li>

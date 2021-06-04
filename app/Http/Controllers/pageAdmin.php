@@ -11,11 +11,32 @@ class pageAdmin extends Controller
     {
         return view('Admin.index');
     }
-
     public function login()
     {
         return view('Admin.login');
     }
+    // konten
+    public function kontenhome()
+    {
+        return view('Admin.konten.kn_home');
+    }
+    public function kontenprofile()
+    {
+        return view('Admin.konten.kn_profile');
+    }
+    public function kontenberita()
+    {
+        return view('Admin.konten.kn_berita');
+    }
+    public function kontenmagang()
+    {
+        return view('Admin.konten.kn_magang');
+    }
+    public function kontenprestasi()
+    {
+        return view('Admin.konten.kn_prestasi');
+    }
+    // kategori
     public function kategoriberita()
     {
         return view('Admin.kat-content.k_berita');
