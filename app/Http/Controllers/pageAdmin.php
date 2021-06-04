@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\M_testing;
 
 class pageAdmin extends Controller
 {
-
     public function home()
     {
         return view('Admin.index');
@@ -22,7 +22,8 @@ class pageAdmin extends Controller
     }
     public function kategorimagang()
     {
-        return view('Admin.kat-content.k_magang');
+        $data = M_testing::all()->sortBy('nama');
+        return view('Admin.kat-content.k_magang',['datanya'=>$data]);
     }
     public function kategoriprestasi()
     {

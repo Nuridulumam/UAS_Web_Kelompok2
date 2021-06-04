@@ -19,19 +19,31 @@
                         <thead>
                             <tr>
                                 <th scope="col">No.</th>
-                                <th scope="col">Kategori Magang</th>
+                                <th scope="col">kategori magang.</th>
+                                <th scope="col">Perusahaan</th>
+                                <th scope="col">Lokasi</th>
                                 <th scope="col" width="120px">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Frontend Developer</td>
-                                <td>
-                                   <a href="#"><div class="badge badge-warning"><i class="fas fa-edit"></i> edit</div></a>
-                                   <a href="#"><div class="badge badge-danger"><i class="fas fa-trash"></i> hapus</div></a>
-                                </td>
-                            </tr>
+                        @php
+                            $i=1
+                        @endphp
+                            @foreach($datanya as $item)
+                                <tr>
+                                    <th scope="row">{{$i}}</th>
+                                    <td>{{$item->bidang}}</td>
+                                    <td>{{$item->nama}}</td>
+                                    <td>{{$item->tempat}}</td>
+                                    <td>
+                                    <a href="#"><div class="badge badge-warning"><i class="fas fa-edit"></i> edit</div></a>
+                                    <a href="#"><div class="badge badge-danger"><i class="fas fa-trash"></i> hapus</div></a>
+                                    </td>
+                                </tr>
+                                @php
+                                    $i++
+                                @endphp
+                            @endforeach
                         </tbody>
                     </table>
                     </div>
