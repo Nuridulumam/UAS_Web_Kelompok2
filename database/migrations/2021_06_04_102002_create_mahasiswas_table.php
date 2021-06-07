@@ -21,7 +21,8 @@ class CreateMahasiswasTable extends Migration
             $table->String('prodi');
             $table->String('contact_person');
             $table->String('email');
-            $table->timestamps();
+            $table->timestamp('create_at')->useCurrent();
+            $table->timestamp('update_at')->useCurrent();
         });
     }
 

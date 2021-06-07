@@ -16,11 +16,12 @@ class CreateAdminsTable extends Migration
         Schema::create('admins', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('nip_admin');
-            $table->foreign('nip_admin')->references('nip')->on('dosens')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('nip_admin')->references('nip')->on('dosens');
             $table->string('username');
             $table->string('level');
             $table->string('email')->nullable();
-            $table->timestamps();
+            $table->timestamp('create_at')->useCurrent();
+            $table->timestamp('update_at')->useCurrent();
         });
     }
 

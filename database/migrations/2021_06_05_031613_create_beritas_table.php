@@ -19,7 +19,8 @@ class CreateBeritasTable extends Migration
             $table->String('headline');
             $table->text('isi');
             $table->String('oleh');
-            $table->timestamps();
+            $table->timestamp('create_at')->useCurrent();
+            $table->timestamp('update_at')->useCurrent();
         });
     }
 

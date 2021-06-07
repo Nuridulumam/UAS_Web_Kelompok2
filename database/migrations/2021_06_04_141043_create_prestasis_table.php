@@ -15,13 +15,14 @@ class CreatePrestasisTable extends Migration
     {
         Schema::create('prestasis', function (Blueprint $table) {
             $table->unsignedInteger('nim');
-            $table->integer('id_prestasi');
+            $table->integerIncrements('id_prestasi');
             $table->String('prestasi');
             $table->String('penyelenggara');
             $table->String('judul');
             $table->String('level');
-            $table->timestamps();
-            $table->foreign('nim')->references('no_induk')->on('mahasiswas')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamp('create_at')->useCurrent();
+            $table->timestamp('update_at')->useCurrent();
+            $table->foreign('nim')->references('no_induk')->on('mahasiswas');
         });
     }
 

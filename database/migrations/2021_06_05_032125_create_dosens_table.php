@@ -21,7 +21,8 @@ class CreateDosensTable extends Migration
             $table->string('prodi');
             $table->string('contact_person');
             $table->string('email')->nullable();
-            $table->timestamps();
+            $table->timestamp('create_at')->useCurrent();
+            $table->timestamp('update_at')->useCurrent();
         });
     }
 
