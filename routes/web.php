@@ -3,6 +3,7 @@
 use App\Http\Controllers\pageUser;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pageAdmin;
+use App\Http\Controllers\AdminsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +38,10 @@ Route::get('/admin/kategori-berita', [pageAdmin::class, 'kategoriberita']);
 Route::get('/admin/kategori-magang', [pageAdmin::class, 'kategorimagang']);
 Route::get('/admin/kategori-prestasi', [pageAdmin::class, 'kategoriprestasi']);
 // pengaturan-admin
-Route::get('/admin/pengaturan-admin', [pageAdmin::class, 'admin']);
+Route::delete('/admin/pengaturan-admin/{admin}', [AdminsController::class, 'destroy']);
+Route::get('/admin/pengaturan-admin', [AdminsController::class, 'index']);
+Route::get('/admin/pengaturan-admin/edit/{admin}', [AdminsController::class, 'edit']);
+Route::patch('/admin/pengaturan-admin/{admin}', [AdminsController::class, 'update']);
+Route::get('/admin/pengaturan-admin/create', [AdminsController::class, 'create']);
+Route::post('/admin/pengaturan-admin', [AdminsController::class, 'store']);
+Route::get('/admin/pengaturan-admin/{admin}', [AdminsController::class, 'show']);

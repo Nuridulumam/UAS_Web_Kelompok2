@@ -14,15 +14,14 @@ class CreateDosensTable extends Migration
     public function up()
     {
         Schema::create('dosens', function (Blueprint $table) {
-            $table->bigIncrements('nip');
-            $table->string('nama');
-            $table->string('tempat_lahir');
-            $table->string('tanggal_lahir');
+            $table->id();
+            $table->integer('nip');
+            $table->string('nama_lengkap');
+            $table->string('email');
+            $table->string('alamat');
             $table->string('prodi');
-            $table->string('contact_person');
-            $table->string('email')->nullable();
-            $table->timestamp('create_at')->useCurrent();
-            $table->timestamp('update_at')->useCurrent();
+            $table->string('contact');
+            $table->timestamps();
         });
     }
 
