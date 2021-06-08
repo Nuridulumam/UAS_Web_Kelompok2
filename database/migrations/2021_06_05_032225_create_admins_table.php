@@ -14,10 +14,10 @@ class CreateAdminsTable extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('nip_admin');
-            $table->foreign('nip_admin')->references('nip')->on('dosens');
+            $table->integerIncrements('id_admin');
             $table->string('username');
+            $table->String('password');
+            $table->String('no_wa');
             $table->string('level');
             $table->string('email')->nullable();
             $table->timestamp('create_at')->useCurrent();
