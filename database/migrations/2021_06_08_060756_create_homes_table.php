@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBeritasTable extends Migration
+class CreateHomesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateBeritasTable extends Migration
      */
     public function up()
     {
-        Schema::create('beritas', function (Blueprint $table) {
-            $table->integerIncrements('id_berita');
-            $table->String('judul')->index();
-            $table->String('jenis');
-            $table->text('isi');
-            $table->unsignedInteger('upload_by');
+        Schema::create('homes', function (Blueprint $table) {
+            $table->id('id_home');
+            $table->String('judul');
+            $table->text('konten');
+            $table->string('upload_by');
             $table->timestamp('create_at')->useCurrent();
             $table->timestamp('update_at')->useCurrent();
         });
@@ -31,6 +30,6 @@ class CreateBeritasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('beritas');
+        Schema::dropIfExists('homes');
     }
 }
