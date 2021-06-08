@@ -51,6 +51,12 @@ class pageAdmin extends Controller
         return view('Admin.kat-content.k_prestasi');
     }
 
+    // pengaturan admin
+    public function admin()
+    {
+        return view('Admin.pengaturan');
+    }
+
 
     public function create()
     {
