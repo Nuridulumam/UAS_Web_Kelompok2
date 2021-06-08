@@ -15,10 +15,10 @@ class CreateBeritasTable extends Migration
     {
         Schema::create('beritas', function (Blueprint $table) {
             $table->integerIncrements('id_berita');
-            $table->String('judul')->index();
-            $table->String('jenis');
+            $table->String('judul');
+            $table->String('headline');
             $table->text('isi');
-            $table->unsignedInteger('upload_by');
+            $table->String('oleh');
             $table->timestamp('create_at')->useCurrent();
             $table->timestamp('update_at')->useCurrent();
         });

@@ -20,8 +20,6 @@ class CreatePrestasisTable extends Migration
             $table->String('penyelenggara');
             $table->String('judul');
             $table->String('level');
-            $table->String('deskripsi');                   // baru
-            $table->String('upload_by');                   //baru sambungin sama admin
             $table->timestamp('create_at')->useCurrent();
             $table->timestamp('update_at')->useCurrent();
             $table->foreign('nim')->references('no_induk')->on('mahasiswas');
