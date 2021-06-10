@@ -16,7 +16,7 @@
                         <form method="POST" action="/admin/pengaturan-admin" class="row g-3">
                             @csrf
                             <div class="form-group col-md-6">
-                                <label for="inputNama" class="form-label">Kategori Berita</label>
+                                <label for="inputNama" class="form-label">Kategori Prestasi</label>
                                 <input type="text" class="form-control @error('nama_lengkap') is-invalid @enderror" id="inputNamaDP" name="nama_lengkap" value="{{ old('nama_lengkap')}}">
                                 @error('nama_lengkap')
                                     <div class="invalid-feedback">{{ $message }}</div>

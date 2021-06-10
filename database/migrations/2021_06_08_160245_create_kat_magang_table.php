@@ -15,7 +15,7 @@ class CreateKatMagangTable extends Migration
     {
         Schema::create('kat_magang', function (Blueprint $table) {
             $table->id();
-            $table->string('kategori-magang');
+            $table->string('kategori_magang');
             $table->timestamps();
         });
     }

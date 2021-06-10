@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kategoriberita;
+use App\Models\KategoriMagang;
 use Illuminate\Http\Request;
 
-class KategoriberitaController extends Controller
+class KategorimagangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class KategoriberitaController extends Controller
      */
     public function index()
     {
-        $kat_berita = Kategoriberita::all();
-        return view('Admin.kat-content.k_berita',['kat_berita'=>$kat_berita]);
+        $kat_magang = KategoriMagang::all();
+        return view('Admin.kat-content.k_magang',['kat_magang'=>$kat_magang]);
     }
 
     /**
@@ -25,7 +25,7 @@ class KategoriberitaController extends Controller
      */
     public function create()
     {
-        return view('Admin.kat-content.show.create_k_berita');
+        return view('Admin.kat-content.show.create_k_magang');
     }
 
     /**
@@ -42,10 +42,10 @@ class KategoriberitaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Kategoriberita  $kategoriberita
+     * @param  \App\Models\KategoriMagang  $kategoriMagang
      * @return \Illuminate\Http\Response
      */
-    public function show(Kategoriberita $kategoriberita)
+    public function show(KategoriMagang $kategoriMagang)
     {
         //
     }
@@ -53,10 +53,10 @@ class KategoriberitaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Kategoriberita  $kategoriberita
+     * @param  \App\Models\KategoriMagang  $kategoriMagang
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategoriberita $kategoriberita)
+    public function edit(KategoriMagang $kategoriMagang)
     {
         //
     }
@@ -65,10 +65,10 @@ class KategoriberitaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Kategoriberita  $kategoriberita
+     * @param  \App\Models\KategoriMagang  $kategoriMagang
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategoriberita $kategoriberita)
+    public function update(Request $request, KategoriMagang $kategoriMagang)
     {
         //
     }
@@ -76,10 +76,10 @@ class KategoriberitaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Kategoriberita  $kategoriberita
+     * @param  \App\Models\KategoriMagang  $kategoriMagang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategoriberita $kategoriberita)
+    public function destroy(KategoriMagang $kategoriMagang)
     {
         //
     }

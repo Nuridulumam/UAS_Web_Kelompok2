@@ -11,7 +11,7 @@
                     <div class="card-header">
                         <h6 class="h6 font-weight-bold text-dark"><i class="fa fa-list"></i> Daftar Kategori Berita</h6>
                         <div class="card-tools">
-                            <div class="btn btn-sm btn-info "><i class="fas fa-plus"></i> Tambah kategori Berita</div>
+                            <a href="/admin/kategori-berita/create" class="btn btn-sm btn-info "><i class="fas fa-plus"></i> Tambah kategori Berita</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -20,20 +20,26 @@
                             <tr>
                                 <th scope="col">No.</th>
                                 <th scope="col">Kategori Berita</th>
-                                <th scope="col">Jenis Berita</th>
                                 <th scope="col" width="120px">Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @php
+                                $i=1
+                            @endphp
+                            @foreach ($kat_berita as $data_berita)
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Development</td>
-                                <td>Penting</td>
+                                <th>{{$i}}</th>
+                                <td>{{$data_berita->kategori_berita}}</td>
                                 <td>
                                    <a href="#"><div class="badge badge-warning"><i class="fas fa-edit"></i> edit</div></a>
                                    <a href="#"><div class="badge badge-danger"><i class="fas fa-trash"></i> hapus</div></a>
                                 </td>
                             </tr>
+                            @php
+                                $i++
+                            @endphp
+                            @endforeach
                         </tbody>
                     </table>
                     </div>

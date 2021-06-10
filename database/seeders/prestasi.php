@@ -14,8 +14,7 @@ class prestasi extends Seeder
      */
     public function run()
     {
-        DB::table('prestasis')->insert([
-            'nim' => 1,
+        DB::table('kat_prestasi')->insert([
             'prestasi'=>'Pemenang Juara Dota',
             'penyelenggara'=>'Steam',
             'judul'=>'International Champhionship 2021',

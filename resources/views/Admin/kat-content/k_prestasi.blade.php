@@ -11,7 +11,7 @@
                     <div class="card-header">
                         <h6 class="h6 font-weight-bold text-dark"><i class="fa fa-list"></i> Daftar Kategori Prestasi</h6>
                         <div class="card-tools">
-                            <div class="btn btn-sm btn-info "><i class="fas fa-plus"></i> Tambah kategori Prestasi</div>
+                            <a href="/admin/kategori-prestasi/create" class="btn btn-sm btn-info "><i class="fas fa-plus"></i> Tambah kategori Prestasi</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -24,14 +24,19 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @php
+                                $i=1
+                            @endphp
+                            @foreach ($kat_prestasi as $data_prestasi)
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Nasional</td>
+                                <th>{{$i}}</th>
+                                <td>{{$data_prestasi->kategori_prestasi}}</td>
                                 <td>
                                    <a href="#"><div class="badge badge-warning"><i class="fas fa-edit"></i> edit</div></a>
                                    <a href="#"><div class="badge badge-danger"><i class="fas fa-trash"></i> hapus</div></a>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                     </div>

@@ -14,11 +14,12 @@ class berita extends Seeder
      */
     public function run()
     {
-        DB::table('beritas')->insert([
-            'judul'=>'Ahmad',
-            'headline'=>'Malang',
-            'isi'=>'9 des 2021',
-            'oleh'=>'teknik informatika dan komputer',
+        DB::table('kat_berita')->insert([
+            'kategori_berita'=>'Penting',
+        ]);
+
+        DB::table('kat_berita')->insert([
+            'kategori_berita'=>'Normal',
         ]);
     }
 }

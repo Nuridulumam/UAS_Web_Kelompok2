@@ -4,6 +4,9 @@ use App\Http\Controllers\pageUser;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pageAdmin;
 use App\Http\Controllers\AdminsController;
+use App\Http\Controllers\KategoriberitaController;
+use App\Http\Controllers\KategorimagangController;
+use App\Http\Controllers\KategoriprestasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,9 +37,12 @@ Route::get('/admin/konten-berita', [pageAdmin::class, 'kontenberita']);
 Route::get('/admin/konten-magang', [pageAdmin::class, 'kontenmagang']);
 Route::get('/admin/konten-prestasi', [pageAdmin::class, 'kontenprestasi']);
 // kategori
-Route::get('/admin/kategori-berita', [pageAdmin::class, 'kategoriberita']);
-Route::get('/admin/kategori-magang', [pageAdmin::class, 'kategorimagang']);
-Route::get('/admin/kategori-prestasi', [pageAdmin::class, 'kategoriprestasi']);
+Route::get('/admin/kategori-berita', [KategoriberitaController::class, 'index']);
+Route::get('/admin/kategori-magang', [KategorimagangController::class, 'index']);
+Route::get('/admin/kategori-prestasi', [KategoriprestasiController::class, 'index']);
+Route::get('/admin/kategori-berita/create', [KategoriberitaController::class, 'create']);
+Route::get('/admin/kategori-magang/create', [KategorimagangController::class, 'create']);
+Route::get('/admin/kategori-prestasi/create', [KategoriprestasiController::class, 'create']);
 // pengaturan-admin
 Route::delete('/admin/pengaturan-admin/{admin}', [AdminsController::class, 'destroy']);
 Route::get('/admin/pengaturan-admin', [AdminsController::class, 'index']);

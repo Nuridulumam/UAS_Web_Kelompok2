@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\M_testing;
 
 class pageAdmin extends Controller
 {
@@ -43,8 +42,7 @@ class pageAdmin extends Controller
     }
     public function kategorimagang()
     {
-        $data = M_testing::all()->sortBy('nama');
-        return view('Admin.kat-content.k_magang',['datanya'=>$data]);
+        return view('Admin.kat-content.k_magang');
     }
     public function kategoriprestasi()
     {

@@ -6,17 +6,17 @@
             <div class="col-12">
                 <div class="head">
                     <a href="/admin/pengaturan-admin" class="btn btn-sm btn-info float-right "><i class="fas fa-arrow-left"></i> Kembali</a>
-                    <h2 class="h2 text-dark"><i class="fas fa-user-plus"></i> Tambah Kategori Berita</h2>
+                    <h2 class="h2 text-dark"><i class="fas fa-user-plus"></i> Tambah Kategori Magang</h2>
                 </div>
                 <div class="card p-2">
                     <div class="card-header">
-                        <h5 class="h6 pt-2 font-weight-bold text-dark"><i class="fa fa-list"></i> Form Tambah Kategori Berita</h5>
+                        <h5 class="h6 pt-2 font-weight-bold text-dark"><i class="fa fa-list"></i> Form Tambah Kategori Magang</h5>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="/admin/pengaturan-admin" class="row g-3">
                             @csrf
                             <div class="form-group col-md-6">
-                                <label for="inputNama" class="form-label">Kategori Berita</label>
+                                <label for="inputNama" class="form-label">Kategori Magang</label>
                                 <input type="text" class="form-control @error('nama_lengkap') is-invalid @enderror" id="inputNamaDP" name="nama_lengkap" value="{{ old('nama_lengkap')}}">
                                 @error('nama_lengkap')
                                     <div class="invalid-feedback">{{ $message }}</div>
