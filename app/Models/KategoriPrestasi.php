@@ -10,6 +10,5 @@ class KategoriPrestasi extends Model
     use HasFactory;
 
     protected $table = 'kat_prestasi';
-    protected $guard = 'id';
-    protected $fillable = ['kat_prestasi'];
+    protected $guarded = ['id'];
 }

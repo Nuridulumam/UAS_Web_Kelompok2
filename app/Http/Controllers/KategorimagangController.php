@@ -14,8 +14,8 @@ class KategorimagangController extends Controller
      */
     public function index()
     {
-        $kat_magang = KategoriMagang::all();
-        return view('Admin.kat-content.k_magang',['kat_magang'=>$kat_magang]);
+        $kategoriMagang = KategoriMagang::all();
+        return view('Admin.kat-content.k_magang',compact('kategoriMagang'));
     }
 
     /**
@@ -36,7 +36,13 @@ class KategorimagangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kategori_magang' => 'required'
+        ]);
+        KategoriMagang::create([
+            'kategori_magang' => $request->kategori_magang
+        ]);
+        return redirect('/admin/kategori-magang')->with('status','Data Berhasil Ditambahkan!');
     }
 
     /**
@@ -58,7 +64,7 @@ class KategorimagangController extends Controller
      */
     public function edit(KategoriMagang $kategoriMagang)
     {
-        //
+        return view('Admin.kat-content.show.edit_k_magang',compact('kategoriMagang'));
     }
 
     /**
@@ -70,7 +76,13 @@ class KategorimagangController extends Controller
      */
     public function update(Request $request, KategoriMagang $kategoriMagang)
     {
-        //
+        $request->validate([
+            'kategori_magang'=>'required'
+        ]);
+        KategoriMagang::where('id', $kategoriMagang->id)->update([
+            'kategori_magang'=>$request->kategori_magang
+        ]);
+        return redirect('/admin/kategori-magang')->with('status','Data Berhasi di Update');
     }
 
     /**
@@ -81,6 +93,7 @@ class KategorimagangController extends Controller
      */
     public function destroy(KategoriMagang $kategoriMagang)
     {
-        //
+        Kategorimagang::destroy($kategoriMagang->id);
+        return redirect('admin/kategori-berita')->with('delete','Data Berhasil Dihapus');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\Kategoriberita;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,8 @@ class KategoriberitaController extends Controller
      */
     public function index()
     {
-        $kat_berita = Kategoriberita::all();
-        return view('Admin.kat-content.k_berita',['kat_berita'=>$kat_berita]);
+        $Kategoriberita = Kategoriberita::all();
+        return view('Admin.kat-content.k_berita',compact('Kategoriberita'));
     }
 
     /**
@@ -36,7 +37,13 @@ class KategoriberitaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kategori_berita' => 'required'
+        ]);
+        Kategoriberita::create([
+            'kategori_berita' => $request->kategori_berita
+        ]);
+        return redirect('/admin/kategori-berita')->with('status','Data Berhasil Ditambahkan!');
     }
 
     /**
@@ -56,9 +63,9 @@ class KategoriberitaController extends Controller
      * @param  \App\Models\Kategoriberita  $kategoriberita
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategoriberita $kategoriberita)
+    public function edit(Kategoriberita $Kategoriberita)
     {
-        //
+        return view('Admin.kat-content.show.edit_k_berita',compact('Kategoriberita'));
     }
 
     /**
@@ -68,9 +75,15 @@ class KategoriberitaController extends Controller
      * @param  \App\Models\Kategoriberita  $kategoriberita
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategoriberita $kategoriberita)
+    public function update(Request $request, Kategoriberita $Kategoriberita)
     {
-        //
+        $request->validate([
+            'kategori_berita'=>'required'
+        ]);
+        Kategoriberita::where('id', $Kategoriberita->id)->update([
+            'kategori_berita'=>$request->kategori_berita
+        ]);
+        return redirect('/admin/kategori-berita')->with('status','Data Berhasi di Update');
     }
 
     /**
@@ -79,8 +92,9 @@ class KategoriberitaController extends Controller
      * @param  \App\Models\Kategoriberita  $kategoriberita
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategoriberita $kategoriberita)
+    public function destroy(Kategoriberita $Kategoriberita)
     {
-        //
+        Kategoriberita::destroy($Kategoriberita->id);
+        return redirect('admin/kategori-berita')->with('delete','Data Berhasil Dihapus');
     }
 }

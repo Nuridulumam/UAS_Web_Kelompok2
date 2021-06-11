@@ -13,12 +13,12 @@
                         <h5 class="h6 pt-2 font-weight-bold text-dark"><i class="fa fa-list"></i> Form Tambah Kategori Magang</h5>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="/admin/pengaturan-admin" class="row g-3">
+                        <form method="POST" action="/admin/kategori-magang" class="row g-3">
                             @csrf
                             <div class="form-group col-md-6">
                                 <label for="inputNama" class="form-label">Kategori Magang</label>
-                                <input type="text" class="form-control @error('nama_lengkap') is-invalid @enderror" id="inputNamaDP" name="nama_lengkap" value="{{ old('nama_lengkap')}}">
-                                @error('nama_lengkap')
+                                <input type="text" class="form-control @error('Kategori Magang') is-invalid @enderror" id="inputkategori_magang" name="kategori_magang" value="{{ old('kategori_magang')}}">
+                                @error('kategori_magang')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>

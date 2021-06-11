@@ -14,8 +14,8 @@ class KategoriprestasiController extends Controller
      */
     public function index()
     {
-        $kat_prestasi = KategoriPrestasi::all();
-        return view('Admin.kat-content.k_prestasi',['kat_prestasi'=>$kat_prestasi]);
+        $kategoriPrestasi = KategoriPrestasi::all();
+        return view('Admin.kat-content.k_prestasi',compact('kategoriPrestasi'));
     }
 
     /**
@@ -36,7 +36,13 @@ class KategoriprestasiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kategori_prestasi' => 'required'
+        ]);
+        KategoriPrestasi::create([
+            'kategori_prestasi' => $request->kategori_prestasi
+        ]);
+        return redirect('/admin/kategori-prestasi')->with('status','Data Berhasil Ditambahkan!');
     }
 
     /**
@@ -58,7 +64,7 @@ class KategoriprestasiController extends Controller
      */
     public function edit(KategoriPrestasi $kategoriPrestasi)
     {
-        //
+        return view('Admin.kat-content.show.edit_k_prestasi',compact('kategoriPrestasi'));
     }
 
     /**
@@ -70,7 +76,13 @@ class KategoriprestasiController extends Controller
      */
     public function update(Request $request, KategoriPrestasi $kategoriPrestasi)
     {
-        //
+        $request->validate([
+            'kategori_prestasi'=>'required'
+        ]);
+        KategoriPrestasi::where('id', $kategoriPrestasi->id)->update([
+            'kategori_prestasi'=>$request->kategori_prestasi
+        ]);
+        return redirect('/admin/kategori-prestasi')->with('status','Data Berhasi di Update');
     }
 
     /**
@@ -81,6 +93,7 @@ class KategoriprestasiController extends Controller
      */
     public function destroy(KategoriPrestasi $kategoriPrestasi)
     {
-        //
+        KategoriPrestasi::destroy($kategoriPrestasi->id);
+        return redirect('admin/kategori-berita')->with('delete','Data Berhasil Dihapus');//
     }
 }

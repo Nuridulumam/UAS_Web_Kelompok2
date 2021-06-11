@@ -24,16 +24,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @php
-                            $i=1
-                        @endphp
-                            @foreach($kat_magang as $data_magang)
+                            @php
+                                $i=1
+                            @endphp
+                            @foreach($kategoriMagang as $kategoriMagang)
                                 <tr>
-                                    <th scope="row">{{$i}}</th>
-                                    <td>{{$data_magang->kategori_magang}}</td>
+                                    <th>{{$i}}</th>
+                                    <td>{{$kategoriMagang->kategori_magang}}</td>
                                     <td>
-                                        <a href="#"><div class="badge badge-warning"><i class="fas fa-edit"></i> edit</div></a>
-                                        <a href="#"><div class="badge badge-danger"><i class="fas fa-trash"></i> hapus</div></a>
+                                        <a href="/admin/kategori-magang/edit/{{$kategoriMagang->id}}"><div class="badge badge-warning"><i class="fas fa-edit"></i> edit</div></a>
+                                        <form action="/admin/kategori-magang/{{$kategoriMagang->id}}" method="post" class="d-inline">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @php

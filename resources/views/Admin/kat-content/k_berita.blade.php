@@ -27,13 +27,17 @@
                             @php
                                 $i=1
                             @endphp
-                            @foreach ($kat_berita as $data_berita)
+                            @foreach ($Kategoriberita as $Kategoriberita)
                             <tr>
                                 <th>{{$i}}</th>
-                                <td>{{$data_berita->kategori_berita}}</td>
+                                <td>{{$Kategoriberita->kategori_berita}}</td>
                                 <td>
-                                   <a href="#"><div class="badge badge-warning"><i class="fas fa-edit"></i> edit</div></a>
-                                   <a href="#"><div class="badge badge-danger"><i class="fas fa-trash"></i> hapus</div></a>
+                                    <a href="/admin/kategori-berita/edit/{{$Kategoriberita->id}}"><div class="badge badge-warning"><i class="fas fa-edit"></i> edit</div></a>
+                                    <form action="/admin/kategori-berita/{{$Kategoriberita->id}}" method="post" class="d-inline">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</button>
+                                    </form>
                                 </td>
                             </tr>
                             @php
