@@ -14,7 +14,7 @@ class CreateKatBeritaTable extends Migration
     public function up()
     {
         Schema::create('kat_berita', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('kategori_berita');
             $table->timestamps();
         });

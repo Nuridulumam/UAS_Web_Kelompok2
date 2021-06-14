@@ -14,7 +14,7 @@ class CreateKatPrestasiTable extends Migration
     public function up()
     {
         Schema::create('kat_prestasi', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('kategori_prestasi');
             $table->timestamps();
         });

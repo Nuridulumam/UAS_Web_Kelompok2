@@ -38,10 +38,10 @@
                 <div id="collapseContent" class="collapse" aria-labelledby="headContent" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Contents:</h6>
-                        <a class="collapse-item" href="{{ url('/admin/konten-home')}}">Home</a>
                         <a class="collapse-item" href="{{ url('/admin/konten-profile')}}">Profile</a>
                         <a class="collapse-item" href="{{ url('/admin/konten-berita')}}">Berita</a>
                         <a class="collapse-item" href="{{ url('/admin/konten-prestasi')}}">Prestasi</a>
+                        <a class="collapse-item" href="{{ url('/admin/konten-pengumuman')}}">Pengumuman</a>
                         <a class="collapse-item" href="{{ url('/admin/konten-magang')}}">Magang</a>
                     </div>
                 </div>
@@ -82,7 +82,12 @@
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+            {{-- <hr class="sidebar-divider d-none d-md-block">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('logout') }}">
+                    <i class="fas fa-fw fa-logout"></i>
+                    <span>Log out</span></a>
+            </li> --}}
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <div class="head">
-                    <a href="/admin/pengaturan-admin" class="btn btn-sm btn-info float-right "><i class="fas fa-arrow-left"></i> Kembali</a>
+                    <a href="/admin/kategori-prestasi" class="btn btn-sm btn-info float-right "><i class="fas fa-arrow-left"></i> Kembali</a>
                     <h2 class="h2 text-dark"><i class="fas fa-user-plus"></i> Tambah Kategori Magang</h2>
                 </div>
                 <div class="card p-2">

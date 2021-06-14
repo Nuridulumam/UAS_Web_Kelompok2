@@ -6,11 +6,11 @@
         <div class="container pt-4">
             <nav class="navbar shadow navbar-expand-lg navbar-light bg-light" style="border-radius: 10px">
                 <div class="container-fluid">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navtoggler" aria-controls="navtoggler" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <a class="navbar-brand ps-3" href="#"><img src="{{asset('img/logoprodi1.png')}}" alt="logo-prodi"></a>
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <div class="collapse navbar-collapse" id="navtoggler">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
                             <a class="nav-link active pe-4" href="{{url('/')}}">Home</a>
@@ -47,7 +47,7 @@
           </div>
         </div>
       </div>
-      <div class="navig-head" style="height: 500px">
+      <div class="navig-head" style="padding: 20px 0 450px 0">
         <div class="col-lg-12">
             <div class="navig-head">
                 <nav class="nav shadow nav-pills nav-fill rounded-pill" style="background-color:#425B6C;">
@@ -88,7 +88,7 @@
 
     {{-- bidang minat --}}
     <section id="bidang-minat">
-      <div class="bidangminat-ti mt-5" style="height: 450px; padding-top: 20px">
+      <div class="bidangminat-ti mt-5" style="padding: 50px 0 100px 0">
         <div class="title-bidangminat pt-5">
           <div class="col-lg-3 mx-auto">
             <h2 class="h2 border-start border-5 border-warning ps-3">Bidang Minat</h2>
@@ -138,7 +138,7 @@
 
     {{--  --}}
     <section id="pengumuman">
-      <div class="pengumuman-ti mt-5" style="height: 450px">
+      <div class="pengumuman-ti mt-5">
         <div class="title-bidangminat pt-5 mx-auto" style="width: 300px">
           <h2 class="h2 border-start border-5 border-warning ps-3">Pengumuman</h2>
         </div>
@@ -196,18 +196,18 @@
 
     {{--  --}}
     <section id="magang">
-      <div class="magang-ti " style="height: 450px;">
+      <div class="magang-ti">
         <div class="title-bidangminat pt-5 mx-auto" style="width: 300px">
           <h2 class="h2 border-start border-5 border-warning ps-3">Magang</h2>
         </div>
         <div class="row justify-content-center" style="margin-top: 70px">
-          <div class="col-3 text-center p-4 bg-light">
+          <div class="col-lg-3 text-center p-4 bg-light">
             <img src="{{asset('img/magang/IMDP.png')}}" class="img-fluid" alt="imdp">
           </div>
-          <div class="col-3 text-center p-4 bg-light">
+          <div class="col-lg-3 text-center p-4 bg-light">
            <img src="{{asset('img/magang/Bisa.ai.png')}}" class="img-fluid" alt="bisa.ai">
           </div>
-          <div class="col-3 text-center p-4 bg-light">
+          <div class="col-lg-3 text-center p-4 bg-light">
             <img src="{{asset('img/magang/cmlabs.png')}}" class="img-fluid" alt="cmlabs">
           </div>
         </div>
@@ -217,41 +217,47 @@
 
     {{--  --}}
     <section id="faq">
-      <div class="faq-ti " style="height: 450px;">
+      <div class="faq-ti" style="padding: 100px 0">
         <div class="title-bidangminat pt-5 mx-auto" style="width: 300px">
           <h2 class="h2 border-start border-5 border-warning ps-3">Faqs</h2>
         </div>
         <div class="row justify-content-center" style="margin-top: 70px">
           <div class="col-md-10">
-            <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion accordion-flush" id="accordionfaq">
               <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                <h2 class="accordion-header" id="headfaq1">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
                     Kenapa pendidikan vokasi bisa bikin lulusannya siap kerja?
                   </button>
                 </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                <div id="faq1" class="accordion-collapse collapse" aria-labelledby="headfaq1" data-bs-parent="#accordionfaq">
+                  <div class="accordion-body">Karena pendidikan vokasi mengedepankan praktik daripada teori. Sehingga perbandingannya adalah 70% praktik dan 30% teori.</div>
                 </div>
               </div>
               <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                <h2 class="accordion-header" id="headfaq2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
                     Apakah lulusan SMA/SMK/MA bisa masuk pendidkan vokasi?
                   </button>
                 </h2>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                <div id="faq2" class="accordion-collapse collapse" aria-labelledby="headfaq2" data-bs-parent="#accordionfaq">
+                  <div class="accordion-body">Bisa</div>
                 </div>
               </div>
               <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingThree">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    Apa saja program studi yang tersedia di pendidikan vokasi?
+                <h2 class="accordion-header" id="headfaq3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                    Apa saja Bidang minat yang tersedia di Prodi Teknologi Informasi?
                   </button>
                 </h2>
-                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                <div id="faq3" class="accordion-collapse collapse" aria-labelledby="headfaq3" data-bs-parent="#accordionfaq">
+                  <div class="accordion-body">Bidang minat yang tersedia di prodi teknologi informasi adalah
+                    <ol>
+                      <li>Teknologi Informasi dan Komputer</li>
+                      <li>Sistem Informasi</li>
+                      <li>Bussiness Digital dan E-commerce</li>
+                    </ol>
+                  </div>
                 </div>
               </div>
             </div>

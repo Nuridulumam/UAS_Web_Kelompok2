@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
-use App\Models\Kategoriberita;
+use App\Models\KategoriBerita;
 use Illuminate\Http\Request;
 
 class KategoriberitaController extends Controller
@@ -15,8 +15,8 @@ class KategoriberitaController extends Controller
      */
     public function index()
     {
-        $Kategoriberita = Kategoriberita::all();
-        return view('Admin.kat-content.k_berita',compact('Kategoriberita'));
+        $KategoriBerita = KategoriBerita::all();
+        return view('Admin.kat-content.k_berita',compact('KategoriBerita'));
     }
 
     /**
@@ -40,7 +40,7 @@ class KategoriberitaController extends Controller
         $request->validate([
             'kategori_berita' => 'required'
         ]);
-        Kategoriberita::create([
+        KategoriBerita::create([
             'kategori_berita' => $request->kategori_berita
         ]);
         return redirect('/admin/kategori-berita')->with('status','Data Berhasil Ditambahkan!');
@@ -49,10 +49,10 @@ class KategoriberitaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Kategoriberita  $kategoriberita
+     * @param  \App\Models\KategoriBerita  $KategoriBerita
      * @return \Illuminate\Http\Response
      */
-    public function show(Kategoriberita $kategoriberita)
+    public function show(KategoriBerita $KategoriBerita)
     {
         //
     }
@@ -60,27 +60,27 @@ class KategoriberitaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Kategoriberita  $kategoriberita
+     * @param  \App\Models\KategoriBerita  $KategoriBerita
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategoriberita $Kategoriberita)
+    public function edit(KategoriBerita $KategoriBerita)
     {
-        return view('Admin.kat-content.show.edit_k_berita',compact('Kategoriberita'));
+        return view('Admin.kat-content.show.edit_k_berita',compact('KategoriBerita'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Kategoriberita  $kategoriberita
+     * @param  \App\Models\KategoriBerita  $KategoriBerita
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategoriberita $Kategoriberita)
+    public function update(Request $request, KategoriBerita $KategoriBerita)
     {
         $request->validate([
             'kategori_berita'=>'required'
         ]);
-        Kategoriberita::where('id', $Kategoriberita->id)->update([
+        KategoriBerita::where('id', $KategoriBerita->id)->update([
             'kategori_berita'=>$request->kategori_berita
         ]);
         return redirect('/admin/kategori-berita')->with('status','Data Berhasi di Update');
@@ -89,12 +89,12 @@ class KategoriberitaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Kategoriberita  $kategoriberita
+     * @param  \App\Models\KategoriBerita  $KategoriBerita
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategoriberita $Kategoriberita)
+    public function destroy(KategoriBerita $KategoriBerita)
     {
-        Kategoriberita::destroy($Kategoriberita->id);
+        KategoriBerita::destroy($KategoriBerita->id);
         return redirect('admin/kategori-berita')->with('delete','Data Berhasil Dihapus');
     }
 }

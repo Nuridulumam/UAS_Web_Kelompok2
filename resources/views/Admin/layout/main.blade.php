@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Dashboard Admin Prodi TI</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -63,7 +63,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin 1</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Muhammad Nuridul Umam</span>
                                 <img class="img-profile rounded-circle"
                                     src="{{asset('assets/admin/img/undraw_profile.svg')}}">
                             </a>
@@ -83,10 +83,14 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item"
+                                onclick="
+                                event.preventDefault()
+                                document.getElementById('formLogout').submit()" href="{{route('logout')}}" >
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
+                                <form id="formLogout" action="{{route('logout')}}" method="POST">@csrf</form>
                             </div>
                         </li>
                     </ul>
@@ -167,6 +171,15 @@
     <script src="{{asset('assets/admin/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('assets/admin/js/demo/chart-pie-demo.js')}}"></script>
 
+    <!-- CKEditor -->
+    <script src="{{asset('assets/ckeditor/ckeditor.js')}}"></script>
+    <script>
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace( 'editor1',{filebrowserImageBrowseUrl : 'kcfinder'} );
+    CKEDITOR.replace( 'editor2',{filebrowserImageBrowseUrl : 'kcfinder'} );
+
+    </script>
     {{-- optional --}}
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>

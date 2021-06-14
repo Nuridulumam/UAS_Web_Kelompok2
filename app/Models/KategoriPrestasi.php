@@ -11,4 +11,8 @@ class KategoriPrestasi extends Model
 
     protected $table = 'kat_prestasi';
     protected $guarded = ['id'];
+
+    public function prestasi(){
+    	return $this->belongsTo('App\Models\Prestasi', 'id_kategori_prestasi');
+    }
 }

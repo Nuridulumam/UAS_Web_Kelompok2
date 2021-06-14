@@ -14,8 +14,8 @@ class KategorimagangController extends Controller
      */
     public function index()
     {
-        $kategoriMagang = KategoriMagang::all();
-        return view('Admin.kat-content.k_magang',compact('kategoriMagang'));
+        $KategoriMagang = KategoriMagang::all();
+        return view('Admin.kat-content.k_magang',compact('KategoriMagang'));
     }
 
     /**
@@ -51,7 +51,7 @@ class KategorimagangController extends Controller
      * @param  \App\Models\KategoriMagang  $kategoriMagang
      * @return \Illuminate\Http\Response
      */
-    public function show(KategoriMagang $kategoriMagang)
+    public function show(KategoriMagang $KategoriMagang)
     {
         //
     }
@@ -62,9 +62,9 @@ class KategorimagangController extends Controller
      * @param  \App\Models\KategoriMagang  $kategoriMagang
      * @return \Illuminate\Http\Response
      */
-    public function edit(KategoriMagang $kategoriMagang)
+    public function edit(KategoriMagang $KategoriMagang)
     {
-        return view('Admin.kat-content.show.edit_k_magang',compact('kategoriMagang'));
+        return view('Admin.kat-content.show.edit_k_magang',compact('KategoriMagang'));
     }
 
     /**
@@ -74,12 +74,12 @@ class KategorimagangController extends Controller
      * @param  \App\Models\KategoriMagang  $kategoriMagang
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, KategoriMagang $kategoriMagang)
+    public function update(Request $request, KategoriMagang $KategoriMagang)
     {
         $request->validate([
             'kategori_magang'=>'required'
         ]);
-        KategoriMagang::where('id', $kategoriMagang->id)->update([
+        KategoriMagang::where('id', $KategoriMagang->id)->update([
             'kategori_magang'=>$request->kategori_magang
         ]);
         return redirect('/admin/kategori-magang')->with('status','Data Berhasi di Update');
@@ -91,9 +91,9 @@ class KategorimagangController extends Controller
      * @param  \App\Models\KategoriMagang  $kategoriMagang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(KategoriMagang $kategoriMagang)
+    public function destroy(KategoriMagang $KategoriMagang)
     {
-        Kategorimagang::destroy($kategoriMagang->id);
-        return redirect('admin/kategori-berita')->with('delete','Data Berhasil Dihapus');
+        Kategorimagang::destroy($KategoriMagang->id);
+        return redirect('admin/kategori-magang')->with('delete','Data Berhasil Dihapus');
     }
 }

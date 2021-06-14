@@ -51,42 +51,17 @@
         <h1 class="h1 text-dark border-start border-5 border-warning ps-2">Berita</h1>
     </div>
     <div class="row ps-4 row-cols-1 row-cols-md-4 g-5">
-        <div class="col">
-          <div class="card h-100">
-            <img src="{{asset('img/prestasi/prestasi1.png')}}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-capitalize">Ini Prospek Kerja Lulusan Prodi Keuangan dan Perbankan</h5>
-              <p class="card-text"><a href="#" class="btn btn-warning stretched-link">Selengkapnya</a></p>
-            </div>
+      @foreach ($Berita as $Berita)
+      <div class="col">
+        <div class="card h-100">
+          <img src="{{asset($Berita->image)}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-capitalize">{{$Berita->judul_berita}}</h5>
+            <p class="card-text"><a href="#" class="btn btn-warning stretched-link">Selengkapnya</a></p>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="{{asset('img/prestasi/prestasi2.png')}}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-capitalize">Penerimaan Mahasiswa Baru Jalur Prestasi Jenjang Ahli Madya (D-III) Pendidikan Vokasi TA. 2021/2022</h5>
-              <p class="card-text"><a href="#" class="btn btn-warning stretched-link">Selengkapnya</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="{{asset('img/prestasi/prestasi3.png')}}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-capitalize">Empat Mahasiswa Jurusan Perbankan Masuk Pegawai BRI Setelah Magang</h5>
-              <p class="card-text"><a href="#" class="btn btn-warning stretched-link">Selengkapnya</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="{{asset('img/prestasi/prestasi4.png')}}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-capitalize">Mahasiswa Vokasi Raih Gold Medal di OCIIP WORLD IP FAIR NIGERIA 2021</h5>
-              <p class="card-text"><a href="#" class="btn btn-warning stretched-link">Selengkapnya</a></p>
-            </div>
-          </div>
-        </div>
+      </div>
+      @endforeach
       </div>
 </div>
 @endsection

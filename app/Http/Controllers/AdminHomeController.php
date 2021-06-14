@@ -3,59 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Admin;
+use Illuminate\Support\Facades\DB;
 
-class pageAdmin extends Controller
+
+class AdminHomeController extends Controller
 {
-    public function home()
-    {
-        return view('Admin.index');
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function __construct(){
+        $this->middleware('auth');
     }
-    public function login()
+    
+    public function index()
     {
-        return view('Admin.login');
-    }
-    // konten
-    public function kontenhome()
-    {
-        return view('Admin.konten.kn_home');
-    }
-    public function kontenprofile()
-    {
-        return view('Admin.konten.kn_profile');
-    }
-    public function kontenberita()
-    {
-        return view('Admin.konten.kn_berita');
-    }
-    public function kontenmagang()
-    {
-        return view('Admin.konten.kn_magang');
-    }
-    public function kontenprestasi()
-    {
-        return view('Admin.konten.kn_prestasi');
-    }
-    // kategori
-    public function kategoriberita()
-    {
-        return view('Admin.kat-content.k_berita');
-    }
-    public function kategorimagang()
-    {
-        return view('Admin.kat-content.k_magang');
-    }
-    public function kategoriprestasi()
-    {
-        return view('Admin.kat-content.k_prestasi');
+        $Admin = Admin::all();
+        return view('Admin.index', compact('Admin'));
     }
 
-    // pengaturan admin
-    public function admin()
-    {
-        return view('Admin.pengaturan');
-    }
-
-
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         //

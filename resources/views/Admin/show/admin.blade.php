@@ -19,7 +19,8 @@
                         <div class="col-md-4">
                             <div class="card shadow-sm"">
                                 <div class="image-admin text-center">
-                                    <img src="{{asset('assets/admin/img/undraw_profile_2.svg')}}" class="img-fluid" width="224px" alt="">
+                                    <img src="{{asset($Admin->image)}}" class="img-fluid rounded-pill p-2" width="224px" alt="">
+                                    {{-- <img src="{{$Admin->image}}" class="img-fluid" width="224px" alt=""> --}}
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title">{{$Admin->nama_lengkap}}</h5>

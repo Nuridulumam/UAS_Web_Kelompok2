@@ -14,8 +14,8 @@ class KategoriprestasiController extends Controller
      */
     public function index()
     {
-        $kategoriPrestasi = KategoriPrestasi::all();
-        return view('Admin.kat-content.k_prestasi',compact('kategoriPrestasi'));
+        $KategoriPrestasi = KategoriPrestasi::all();
+        return view('Admin.kat-content.k_prestasi', compact('KategoriPrestasi'));
     }
 
     /**
@@ -51,7 +51,7 @@ class KategoriprestasiController extends Controller
      * @param  \App\Models\KategoriPrestasi  $kategoriPrestasi
      * @return \Illuminate\Http\Response
      */
-    public function show(KategoriPrestasi $kategoriPrestasi)
+    public function show(KategoriPrestasi $KategoriPrestasi)
     {
         //
     }
@@ -62,9 +62,9 @@ class KategoriprestasiController extends Controller
      * @param  \App\Models\KategoriPrestasi  $kategoriPrestasi
      * @return \Illuminate\Http\Response
      */
-    public function edit(KategoriPrestasi $kategoriPrestasi)
+    public function edit(KategoriPrestasi $KategoriPrestasi)
     {
-        return view('Admin.kat-content.show.edit_k_prestasi',compact('kategoriPrestasi'));
+        return view('Admin.kat-content.show.edit_k_prestasi', compact('KategoriPrestasi'));
     }
 
     /**
@@ -74,12 +74,12 @@ class KategoriprestasiController extends Controller
      * @param  \App\Models\KategoriPrestasi  $kategoriPrestasi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, KategoriPrestasi $kategoriPrestasi)
+    public function update(Request $request, KategoriPrestasi $KategoriPrestasi)
     {
         $request->validate([
             'kategori_prestasi'=>'required'
         ]);
-        KategoriPrestasi::where('id', $kategoriPrestasi->id)->update([
+        KategoriPrestasi::where('id', $KategoriPrestasi->id)->update([
             'kategori_prestasi'=>$request->kategori_prestasi
         ]);
         return redirect('/admin/kategori-prestasi')->with('status','Data Berhasi di Update');
@@ -91,9 +91,9 @@ class KategoriprestasiController extends Controller
      * @param  \App\Models\KategoriPrestasi  $kategoriPrestasi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(KategoriPrestasi $kategoriPrestasi)
+    public function destroy(KategoriPrestasi $KategoriPrestasi)
     {
-        KategoriPrestasi::destroy($kategoriPrestasi->id);
-        return redirect('admin/kategori-berita')->with('delete','Data Berhasil Dihapus');//
+        KategoriPrestasi::destroy($KategoriPrestasi->id);
+        return redirect('admin/kategori-prestasi')->with('delete','Data Berhasil Dihapus');//
     }
 }

@@ -27,14 +27,14 @@
                             @php
                                 $i=1
                             @endphp
-                            @foreach ($kategoriPrestasi as $kategoriPrestasi)
+                            @foreach ($KategoriPrestasi as $KategoriPrestasi)
                             <tr>
                                 <th>{{$i}}</th>
-                                <td>{{$kategoriPrestasi->kategori_prestasi}}</td>
+                                <td>{{$KategoriPrestasi->kategori_prestasi}}</td>
                                 <td>
-                                   <a href="/admin/kategori-prestasi/edit/{{$kategoriPrestasi->id}}"><div class="badge badge-warning"><i class="fas fa-edit"></i> edit</div></a>
-                                   <form action="/admin/kategori-prestasi/{{$kategoriPrestasi->id}}" method="post" class="d-inline">
-                                        @method('DELETE')
+                                   <a href="/admin/kategori-prestasi/edit/{{$KategoriPrestasi->id}}"><div class="badge badge-warning"><i class="fas fa-edit"></i> edit</div></a>
+                                   <form action="/admin/kategori-prestasi/{{$KategoriPrestasi->id}}" method="post" class="d-inline">
+                                        @method('delete')
                                         @csrf
                                         <button type="submit" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</button>
                                     </form>

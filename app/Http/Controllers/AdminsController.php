@@ -45,15 +45,19 @@ class AdminsController extends Controller
             'username' => 'required',
             'role' => 'required',
             'id_admin' => 'required',
-            'password' => 'required'
+            'password' => 'required',
+            'image' => 'required',
+            'image.*' => 'mimes:jpg,jpeg,png|max:2000'
         ]);
+        $imageName = time().'.'.$request->image->extension();
         Admin::create([
             'nama_lengkap' => $request->nama_lengkap,
             'email' => $request->email,
             'username' => $request->username,
             'role' => $request->role,
             'id_admin' => $request->id_admin,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'image' => $request->image->move('images', $imageName)
         ]);
         return redirect('/admin/pengaturan-admin')->with('status', 'Data Admin Berhasil Ditambahkan!');
     }

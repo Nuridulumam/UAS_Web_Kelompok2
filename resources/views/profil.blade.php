@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <div class="col-md-7 pt-3">
-                    <p class="text-dark text-md-start fs-5 fw-normal">
+                    <p class="text-dark fs-5 fw-normal" style="text-align: justify">
                         Pendidikan vokasi merupakan pendidikan yang mengarahkan mahasiswa untuk mengembangkan keahlian terapan, beradaptasi pada bidang pekerjaan tertentu dan dapat menciptakan peluang kerja Pendidikan vokasi menganut sistem terbuka (multi-entry-exit system) dan multimakna (berorientasi pada pembudayaan, pemberdayaan, pembentukan watak, dan kepribadian, serta berbagai kecakapan hidup life skill. Pendidikan vokasi berorientasi pada kecakapan kerja sesuai dengan perkembangan ilmu pengetahuan dan teknologi terapan serta sesuai dengan tuntutan kebutuhan lapangan kerja. 
                     </p>
                 </div>
@@ -87,7 +87,7 @@
         <div class="desc">
             <div class="row ps-5">
                 <div class="col-md-12">
-                    <p class="text-dark text-lg-start fs-5 fw-normal">
+                    <p class="text-dark fs-5 fw-normal" style="text-align: justify">
                         Menjadi pelaksana pendidikan vokasi di bidang keahlian Informasi agar mahasiswa dapat mengembangkan potensi dirinya meraih keahlian dan kompetensi yang mampu bersaing di tingkat regional maupun nasional.
                     </p>
                 </div>
@@ -102,7 +102,7 @@
         <div class="desc">
             <div class="row ps-5">
                 <div class="col-md-12">
-                    <ol class="text-dark text-md-start fs-5 fw-normal">
+                    <ol class="text-dark fs-5 fw-normal" style="text-align: justify">
                         <li>Melaksanakan pendidikan,pelatihan, dan menumbuh - kembangkan kepercayaan diri peserta didik, sehingga mencapai keahlian dan kompetensi dalam bidang Teknologi Informasi.</li>
                         <li>Mengahasilkan tenaga Teknologi Informasi yang profesional, terampil, kreatif serta mempunyai jiwa kewirausahaan berbasis teknologi.</li>
                         <li>Melakukan pendampingan, tutorial, pembimbingan dan konsultasi di bidang Teknologi Informasi dan menfasilitasi ketersediaan tenaga kerja terampil bagi industri dalam maupun luar negri.</li>
@@ -120,7 +120,7 @@
         <div class="desc">
             <div class="row ps-5">
                 <div class="col-md-12">
-                    <ol class="text-dark text-md-start fs-5 fw-normal">
+                    <ol class="text-dark fs-5 fw-normal" style="text-align: justify">
                         <li>Menyelenggarakan pendidikan dan pelatihan sehingga menghasilkan lulusan Ahli Madya yang terampil bekerja dan mampu mengembangkan diri di dalam bidang ilmu Teknologi Informasi guna memenuhi kebutuhan pembangunan nasional dan membekali mahasiswa dengan kompetensi khusus (core competency) bidang Teknologi Informasi.</li>
                         <li>MMemiliki integritas dan moral sesuai dengan norma-norma dan etika baik di dunia maya maupun dunia nyata sehingga menjadi insan cerdas, kreatif, inovatif dan kompetitif serta percaya diri untuk berperan aktif dalam menjawab tantangan dan kebutuhan dunia industri dan masyarakat;</li>
                         <li> Memiliki kemampuan, kecerdasan, keterampilan peserta didik dalam memanfaatkan ilmu pengetahuan, teknologi dan seni di bidang Teknologi Informasi sehingga mampu mengelola suatu proyek pembangunan teknologi komputer.</li>

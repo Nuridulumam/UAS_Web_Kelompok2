@@ -13,7 +13,7 @@
                         <h5 class="h6 pt-2 font-weight-bold text-dark"><i class="fa fa-list"></i> Form Tambah Admin</h5>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="/admin/pengaturan-admin" class="row g-3">
+                        <form method="POST" action="/admin/pengaturan-admin" enctype="multipart/form-data" class="row g-3">
                             @csrf
                             <div class="form-group col-md-6">
                                 <label for="inputNama" class="form-label">Nama Lengkap</label>
@@ -36,13 +36,16 @@
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
-                            {{-- <div class="form-group col-md-12">
+                            <div class="form-group col-md-12">
                                 <label for="Input foto" class="form-label">Upload Foto</label>
                                 <div class="custom-file mb-3">
-                                    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                    <input type="file" class="custom-file-input @error('image') is-invalid @enderror" id="validatedCustomFile" name="image">
                                     <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                                 </div>
-                            </div> --}}
+                                @error('image')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword" class="form-label">Password</label>
                                 <input type="password" class="form-control @error('password') is-invalid @enderror" id="inputPassword" name="password" value="{{ old('password')}}">
@@ -77,36 +80,3 @@
         </div>
     </div>
 @endsection
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

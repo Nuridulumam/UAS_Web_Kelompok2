@@ -52,42 +52,17 @@
         <h1 class="h1 text-dark border-start border-5 border-warning ps-2">Magang</h1>
     </div>
     <div class="row ps-4 row-cols-1 row-cols-md-4 g-5">
-        <div class="col">
-          <div class="card h-100">
-            <img src="{{asset('img/magang/cmlabs.png')}}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">CMLAB.CO</h5>
-              <p class="card-text">CMLABS adalah salah satu startup asal Jakarta yang bergerak dibidang Jasa SEO untuk Enterprise. Saat ini cmlabs beroperasi juga di kota Malang untuk menjangkau talenta-talenta brilian di  salah satu kota pendidikan di Indonesia.</p>
-            </div>
+      @foreach ($Magang as $Magang)
+      <div class="col">
+        <div class="card h-100">
+          <img src="{{asset($Magang->image)}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{$Magang->judul_magang}}</h5>
+            <p class="card-text">{{$Magang->deskripsi}}</p>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="{{asset('img/magang/matsuya.png')}}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">PT Masuya Distra </h5>
-              <p class="card-text">We are leading marketing,k selling and distributor of foodservice and consumer product in Indonesia, and has a long, established history of coustumer statisfaction with competitive prices. quality, and coustumer service.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="{{asset('img/magang/bisa.ai.png')}}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Bisa.ai</h5>
-              <p class="card-text">Program magang bidang ‘Kecerdasan Artifisial’  telah dirancang bagi  mahasiswa untuk belajar selama 1 semester hingga 2 semester di bisa.ai untuk pendaftaran bisa langsung menuju  link bit.ly/bisaai_kampus_merdeka</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="{{asset('img/magang/IMDP.png')}}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">XL IoT</h5>
-              <p class="card-text">XL adalah perusahaan seluler swasta pertama di Indonesia saat ini XL juga merupakan perusahaan telekomunikasi terbesar di Asia dan publik. XL terus  berinovasi dan menjadi operator terbaik  di Indonesia.</p>
-            </div>
-          </div>
-        </div>
+      </div>
+      @endforeach
       </div>
 </div>
 @endsection

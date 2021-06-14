@@ -11,4 +11,8 @@ class KategoriMagang extends Model
 
     protected $table = 'kat_magang';
     protected $guarded = ['id'];
+
+    public function magang(){
+    	return $this->belongsTo('App\Models\Magang', 'id_kategori_magang');
+    }
 }

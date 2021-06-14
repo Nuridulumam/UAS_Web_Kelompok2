@@ -11,7 +11,7 @@
                     <div class="card-header">
                         <h6 class="h6 font-weight-bold text-dark"><i class="fa fa-list"></i> Daftar Konten Prestasi</h6>
                         <div class="card-tools">
-                            <div class="btn btn-sm btn-info "><i class="fas fa-plus"></i> Tambah Konten Prestasi</div>
+                            <a href="/admin/konten-prestasi/create" class="btn btn-sm btn-info "><i class="fas fa-plus"></i> Tambah Konten Prestasi</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -28,30 +28,32 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($Prestasi as $no => $prestasi)
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Penerimaan Mahasiswa Baru Jalur Prestasi Jenjang Ahli Madya (D-III) Pendidikan Vokasi TA. 2021/2022</td>
-                                <td>28 April 2021</td>
-                                <td>Admin 1</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ea adipisci incidunt libero, optio atque nihil enim sit molestiae aliquid nobis accusantium quia sequi, deleniti blanditiis quas odit quibusdam ratione voluptate aut voluptatum? Asperiores sunt magnam accusantium ut quod, unde odit placeat, minima veritatis, veniam provident perspiciatis beatae nobis quia facere neque vel quasi. Accusantium error, voluptas praesentium perspiciatis tenetur et mollitia aspernatur eius sint dignissimos nisi perferendis sequi asperiores assumenda soluta ex consequuntur nemo vitae libero voluptate porro quibusdam, pariatur cumque doloribus. Voluptatem doloribus ipsa iste debitis ipsam placeat, aliquid optio aliquam dignissimos a minus nesciunt, commodi veritatis cupiditate?</td>
-                                <td>Nasional</td>
+                                <th scope="row">{{++$no}}</th>
+                                <td>{{$prestasi->judul_prestasi}}</td>
+                                <td>{{$prestasi->tanggal_prestasi}}</td>
                                 <td>
-                                   <a href="#"><div class="badge badge-warning"><i class="fas fa-edit"></i> edit</div></a>
-                                   <a href="#"><div class="badge badge-danger"><i class="fas fa-trash"></i> hapus</div></a>
+                                    @foreach ($prestasi->adminprestasi as $ap)
+                                    {{$ap->nama_lengkap}}
+                                    @endforeach
+                                </td>
+                                <td>{{$prestasi->deskripsi}}</td>
+                                <td>
+                                    @foreach ($prestasi->katprestasi as $kp)
+                                    {{$kp->kategori_prestasi}}
+                                    @endforeach
+                                </td>
+                                <td>
+                                    <a href="/admin/konten-prestasi/{{ $prestasi->id }}"><div class="badge badge-warning"><i class="fas fa-eye"></i> Detail</div></a>
+                                    <form action="/admin/konten-prestasi/{{$prestasi->id}}" method="post" class="d-inline">
+                                        @method('delete')
+                                        @csrf
+                                       <button type="submit" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</button>
+                                    </form>
                                 </td>
                             </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Jadwal Kuliah Daring Selama Bulan Ramadhan 1442 H</td>
-                                <td>3 Mei 2021</td>
-                                <td>Biro Vokasi</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ea adipisci incidunt libero, optio atque nihil enim sit molestiae aliquid nobis accusantium quia sequi, deleniti blanditiis quas odit quibusdam ratione voluptate aut voluptatum? Asperiores sunt magnam accusantium ut quod, unde odit placeat, minima veritatis, veniam provident perspiciatis beatae nobis quia facere neque vel quasi. Accusantium error, voluptas praesentium perspiciatis tenetur et mollitia aspernatur eius sint dignissimos nisi perferendis sequi asperiores assumenda soluta ex consequuntur nemo vitae libero voluptate porro quibusdam, pariatur cumque doloribus. Voluptatem doloribus ipsa iste debitis ipsam placeat, aliquid optio aliquam dignissimos a minus nesciunt, commodi veritatis cupiditate?</td>
-                                <td>Pengumuman</td>
-                                <td>
-                                   <a href="#"><div class="badge badge-warning"><i class="fas fa-edit"></i> edit</div></a>
-                                   <a href="#"><div class="badge badge-danger"><i class="fas fa-trash"></i> hapus</div></a>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                     </div>
